@@ -12,7 +12,6 @@ class GroupSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField(read_only=True)
-    group = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Post
