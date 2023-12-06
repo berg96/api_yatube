@@ -5,6 +5,7 @@ from rest_framework.routers import SimpleRouter
 from .views import CommentViewSet, GroupViewSet, PostViewSet
 
 app_name = 'api'
+api_version = 'v1/'
 
 router = SimpleRouter()
 router.register('posts', PostViewSet)
@@ -14,6 +15,6 @@ router.register(
 )
 
 urlpatterns = [
-    path('api-token-auth/', views.obtain_auth_token),
-    path('', include(router.urls)),
+    path(api_version + 'api-token-auth/', views.obtain_auth_token),
+    path(api_version, include(router.urls)),
 ]
